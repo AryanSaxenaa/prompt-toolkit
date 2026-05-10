@@ -36,8 +36,4 @@ PART 5 — TOP 3 RECOMMENDATIONS
 
 After the full idea list, select your top 3 ideas. Choose the ones with the highest combination of originality, judge impact, and real-world significance — not the easiest to build. For each of the top 3 provide: why this one (reasoning based on originality, judge appeal, demo power, and real-world potential); what would make it legendary versus just good (the one insight or design decision that separates a winner from a finalist); and why now (why is this the right moment for this idea given the current state of the technology and the market).
 
----
-
-HOW TO USE THIS: After pasting this prompt, tell me: (1) the hackathon name and organiser, (2) the current season or edition number so I can find all prior editions, (3) available technology, APIs, or sponsor tools that are required or available, and (4) any problem spaces you are already excited about (optional — I will explore broadly regardless). I will then research all prior editions and winners, find similar companies and their hackathon winners, cross-analyse patterns, apply quality filters, generate 8 to 12 ambitious ideas, and recommend the top 3 based purely on impact and originality.
-
----
+--
