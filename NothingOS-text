@@ -1,0 +1,36 @@
+You are an expert Frontend Developer. Your task is to update the typography of this website to mirror the unique, retro-futuristic, tech-minimalist aesthetic of the Nothing tech company. 
+
+Follow these specific implementation rules:
+
+1. TYPOGRAPHY STRATEGY
+- Headers / Accents: Use a Dot-Matrix font or pixelated monospaced font for H1/H2 tags and widgets.
+- Body / UI Text: Use a clean, geometric, high-legibility sans-serif or monospaced font.
+
+2. FONT SELECTION (Choose ONE approach below)
+
+Approach A: Open-Source Google Fonts (Recommended for instant setup)
+- Header Font: 'Sixtyfour' or 'Silkscreen' (for the dot-matrix/pixel look).
+- Body Font: 'Inter' or 'Space Mono' (for the clean tech look).
+
+Approach B: Replica Fonts (For exact matching)
+- If files are available in the directory, use 'NDot 57' for headers and 'NType-82' or 'LL Lettera Mono' for body text.
+
+3. TAILWIND CSS / CSS CONFIGURATION
+Update the global styles or Tailwind configuration to include these families:
+
+// Tailwind Example
+theme: {
+  extend: {
+    fontFamily: {
+      nothingHeader: ['"Sixtyfour"', '"Silkscreen"', 'monospace'],
+      nothingBody: ['"Inter"', '"Space Mono"', 'sans-serif'],
+    },
+  },
+}
+
+4. DESIGN RULES & STYLING STRETCH
+- Force all headers using the dot-matrix font to UPPERCASE (`text-transform: uppercase`).
+- Keep letter spacing slightly wide on headers (`letter-spacing: 0.05em`).
+- Maintain a strict dark-mode-first color palette: Background #000000, Text #FFFFFF, Accents #FF5722 (Nothing Red) or muted grays (#888888).
+
+Please write the exact CSS `@import` rules for the fonts, update the global stylesheet, and apply the classes to the main layout.
