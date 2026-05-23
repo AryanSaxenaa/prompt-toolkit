@@ -1,0 +1,1 @@
+Act as a senior LLM systems engineer. Design a production system prompt for [USE CASE] with these layers: role definition, capability boundaries, output format spec, refusal logic, edge case handling, and a self-check protocol. Show me the prompt, then show me 5 inputs that would break it, then patch the prompt.
