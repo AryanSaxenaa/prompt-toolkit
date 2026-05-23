@@ -1,0 +1,1 @@
+Before writing any prompt for [TASK], generate a complete evaluation suite. Include: 20 diverse test cases covering edge cases, failure modes, and adversarial inputs. For each case, define the exact success criteria, the expected output format, and a scoring rubric from 0-10. Output as a JSON eval set I can run before touching the prompt
