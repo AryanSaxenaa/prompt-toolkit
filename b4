@@ -1,0 +1,99 @@
+1/ no load testing before launch
+> you don't know where it breaks because you've never pushed it
+> one traffic spike and you're debugging live in production
+
+2/ session data stored in server memory
+> works on one instance
+> breaks the moment you need two
+
+3/ file uploads going directly to your app server
+> disk fills up. server dies. files lost.
+> move uploads to object storage on day one
+
+4/ synchronous email sending in API routes
+> slow email provider = slow API response for every request that triggers one
+> offload to a queue. always.
+
+5/ no queue system for background tasks
+> everything blocking
+> one slow task pauses everything behind it
+
+6/ hardcoded secrets in deployment scripts
+> sitting in your CI logs
+> visible to anyone with pipeline access
+
+7/ single database with no read replica
+> all reads and writes hitting one machine
+> first real traffic spike kills query performance
+
+8/ no CDN in front of static assets
+> every image served by your app server
+> 500 concurrent users = 500 image requests hitting your backend
+
+9/ DB migrations running automatically on app start
+> two instances deploy at the same time
+> both run migrations. race condition. data inconsistency.
+
+10/ no database backup ever tested with a restore
+> you have backups
+> you've never actually restored from one
+
+11/ unindexed foreign key columns
+> every JOIN is a full scan
+> slow at 100 rows. broken at 100,000.
+
+12/ no rate limiting anywhere
+> 500 users. one of them is a bot.
+> your server is now a bot server
+
+13/ API responses with no compression
+> JSON payloads sent uncompressed
+> 10x the bandwidth they need to use
+
+14/ no error alerting configured
+> app crashes at 3 AM
+> you find out when a user emails you at 9 AM
+
+15/ transactions not used for multi-step writes
+> step 1 succeeds. app crashes. step 2 never runs.
+> data is now inconsistent permanently
+
+16/ health check endpoint missing
+> load balancer sends traffic to crashed instances
+> users get 502s. you get support emails.
+
+17/ memory leaks in long-running processes
+> memory grows slowly. server hits 100%.
+> everything grinds to a halt. restart. repeat.
+
+18/ no graceful shutdown handling
+> deploy kills active requests
+> users mid-action get errors with no retry
+
+19/ dependent on a third-party API with no fallback
+> that API goes down
+> your core feature goes down with it
+
+20/ all logs written to local disk
+> logs rotate off
+> incident happens. no history to debug with.
+
+21/ no circuit breaker on external calls
+> external service is slow
+> your thread pool fills waiting for it. everything queues.
+
+22/ unparameterized search queries
+> search with any real data volume
+> 5-second response times at scale
+
+23/ no connection timeout on outbound HTTP calls
+> external API hangs
+> your thread hangs with it. indefinitely.
+
+24/ WebSockets not handled by a stateful service
+> horizontal scale breaks real-time features
+> every user gets disconnected
+
+25/ no runbook for common incidents
+> something breaks at 2 AM
+> nobody knows what to do. everyone panics.
